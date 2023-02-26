@@ -1,0 +1,119 @@
+.header {
+  background: linear-gradient(180deg, #041827 84.9%, rgba(4, 24, 39, 0) 100%);
+  padding-top: 30px;
+  padding-bottom: 35px;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+
+  @include vp-1023 {
+    position: static;
+    padding-top: 20px;
+    padding-bottom: 25px;
+  }
+
+  @include vp-767 {
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+}
+
+.header__logo {
+  display: flex;
+  align-self: start;
+
+  svg {
+    display: block;
+  }
+
+  &:focus {
+    outline: 2px solid $color-focus-outline;
+  }
+
+  @include vp-767 {
+    width: 35px;
+    height: 35px;
+    align-self: center;
+  }
+}
+
+.header__navigation {
+  display: flex;
+  padding-right: 3%;
+  justify-content: space-between;
+  align-items: center;
+
+  @include vp-1023 {
+    padding-right: 70px;
+  }
+
+  @include vp-767 {
+    padding-right: 35px;
+  }
+}
+
+.header__contacts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-width: 43%;
+  max-width: 35%;
+  margin-bottom: 5px;
+
+  svg {
+    margin-right: 15px;
+  }
+
+  @include vp-1023 {
+    display: flex;
+    justify-content: end;
+    margin: 0;
+    max-width: 50%;
+    padding: 0;
+    align-self: start;
+
+    svg {
+      margin-right: 0;
+    }
+  }
+}
+
+.header__link {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  color: $color-default-white;
+
+  @include vp-1023 {
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+  }
+
+
+  @include vp-767 {
+    align-items: center;
+  }
+}
+
+.header__link-text {
+  @include vp-1023 {
+    display: none;
+  }
+}
+
+
+.header__button {
+  padding: 10px 15px;
+  background: transparent;
+  border: 1px solid #f2f5f7;
+  font-size: 14px;
+  line-height: 16px;
+  width: 160px;
+  margin-bottom: 5px;
+  margin-top: 0;
+
+
+  @include vp-1023 {
+    display: none;
+  }
+}

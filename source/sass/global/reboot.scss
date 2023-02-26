@@ -16,8 +16,10 @@ html {
   font-weight: 400;
   font-size: $fz-default;
   line-height: 24px;
-  font-family: $ff-placeholder;
+  font-family: $ff-ptmono;
   color: $color-default-black;
+
+  scroll-behavior: smooth;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -31,12 +33,20 @@ body {
   width: 100%;
   height: 100%;
 
-  background-color: $color-default-white;
+  background-color: $color-background_body;
 }
 
 a {
-  color: $color-default-black;
   text-decoration: none;
+
+  &:focus {
+    outline: 2px solid $color-focus-outline;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
 }
 
 img,

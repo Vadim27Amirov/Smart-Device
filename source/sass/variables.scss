@@ -3,19 +3,28 @@
 
 // Default
 
-$color-default-black:               #000000;
-$color-default-white:               #ffffff;
-$color-transparent:                 rgba(255, 255, 255, 0);
+$color-default-black:               #041827;
+$color-default-white:               #f2f5f6;
+$color-transparent:                 rgba(255, 255, 255, 0.7);
+$color-default-blue:                #00b2ff;
+$color-white:                       #ffffff;
+$color-border-gray:                 #ebebeb;
+$color-background-input:            rgba(4, 20, 39, 0.15);
+$color-background_body:             #f8fdff;
 
 // Project palette
 // для нейминга цветов используем https://www.htmlcsscolor.com/hex/334482
 
-$color-neon-blue:                   #2c39f2;
-$color-torch-red:                   #ff1553;
+
+$color-background-wight:               #e5e5e5;
+$color-background-dark:                #041427;
+$color-background-blue:                #f8f9fc;
+$color-background-product:             #174d64;
+$color-focus-outline:                  #4c97b7;
 
 // Gradient
 
-$black-to-right:                    linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
+$black-to-right:                    linear-gradient(139deg, #135180 33.5%, #00b3ff 0%, #00b3ff 50%);
 
 // Typography
 // ---------------------------------
@@ -27,7 +36,9 @@ $fz-default:                        16px;
 // https://www.artlebedev.ru/kovodstvo/sections/159/#13
 $ff-rouble:                         "Rouble", "Arial", sans-serif;
 
-$ff-placeholder:                    "Placeholder", "Arial", sans-serif;
+$ff-ptmono:                         "PT Mono", "Courier", monospace;
+
+$ff-robotocondensed:                "Roboto Condensed", "Arial", sans-serif;
 
 // Animation
 // ---------------------------------
