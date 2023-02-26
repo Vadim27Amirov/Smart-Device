@@ -103,17 +103,26 @@
 
 
 .header__button {
-  padding: 10px 15px;
-  background: transparent;
-  border: 1px solid #f2f5f7;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
   font-size: 14px;
   line-height: 16px;
-  width: 160px;
-  margin-bottom: 5px;
-  margin-top: 0;
-
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $color-white;
+  background-color: #041827;
+  border: 1px solid $color-default-white;
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 10px 15px;
+  width: 169px;
+  text-align: center;
 
   @include vp-1023 {
     display: none;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
   }
 }
