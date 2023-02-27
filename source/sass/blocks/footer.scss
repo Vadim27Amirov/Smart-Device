@@ -1,0 +1,164 @@
+.footer {
+  background-color: #041827;
+  padding-top: 52px;
+  padding-bottom: 50px;
+
+  @include vp-1023 {
+    padding-top: 50px;
+  }
+
+  @include vp-767 {
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+}
+
+.footer__content {
+  display: grid;
+  grid-template-columns: minmax(250px, 345px) minmax(220px, 470px) minmax(250px, 345px);
+  column-gap: 30px;
+
+  @include vp-1023 {
+    grid-template-columns: 1fr 320px;
+    column-gap: 130px;
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.footer__iner {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding-right: 30px;
+
+  @include vp-1023 {
+    grid-column: 1/-1;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 0;
+  }
+
+  @include vp-767 {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 18px;
+    border-bottom: 1px solid $color-white;
+  }
+}
+
+.footer__logo {
+  display: inline-flex;
+  margin-bottom: 27px;
+
+  svg {
+    display: block;
+  }
+
+  &:focus {
+    outline: 2px solid $color-focus-outline;
+  }
+
+  @include vp-1023 {
+    margin-bottom: 30px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 10px;
+    position: relative;
+    left: -2px;
+  }
+}
+
+.footer__section {
+  padding-top: 6px;
+  color: $color-white;
+
+  @include vp-767 {
+    position: relative;
+    padding: 22px 25px 5px;
+    border-bottom: 1px solid $color-white;
+
+    &_active {
+      padding-bottom: 13px;
+    }
+  }
+}
+
+.footer__section-title {
+  font-family: $ff-robotocondensed;
+  font-size: 15px;
+  line-height: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 22px;
+  letter-spacing: 0.05em;
+
+  @include vp-1023 {
+    margin-bottom: 20px;
+  }
+
+  @include vp-767 {
+    z-index: 1;
+    margin-bottom: 17px;
+  }
+}
+
+.footer__title-wrap {
+  display: flex;
+  justify-content: space-between;
+
+  @include vp-767 {
+    padding-right: 2px;
+  }
+}
+
+.footer__social {
+  padding-left: 10px;
+
+  @include vp-1023 {
+    padding-left: 0;
+    padding-top: 10px;
+  }
+}
+
+.footer__nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  column-gap: 30px;
+  opacity: 0.7;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer__nav-item {
+  line-height: 22px;
+  margin-top: 0;
+  margin-bottom: 8px;
+  width: 220px;
+
+  @include vp-1439 {
+    &:nth-child(2n + 1) {
+      order: -1;
+    }
+  }
+
+  @include vp-1023 {
+    margin-bottom: 8px;
+  }
+}
+
+.footer__nav-link {
+  color: $color-default-white;
+}
+
+.footer__button {
+  display: none;
+}

@@ -1,0 +1,35 @@
+
+.accordion__button {
+  display: none;
+
+  @include vp-767 {
+    display: inline-flex;
+    border: none;
+    background-color: $color-background-dark;
+    background-image: url("../img/svg/open-button.svg");
+    background-repeat: no-repeat;
+    background-position: right;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 25px;
+
+    &_closed {
+      background-image: url("../img/svg/close-button.svg");
+    }
+
+    &_hidden {
+      display: none;
+    }
+  }
+}
+
+.accordion__body {
+  @include vp-767 {
+    &_closed {
+      display: none;
+    }
+  }
+}
