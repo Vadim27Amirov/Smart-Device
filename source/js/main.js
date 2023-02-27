@@ -5,6 +5,36 @@ import {Form} from './modules/form-validate/form';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
+  const accordionButtons = document.querySelectorAll('.accordion__button');
+  const accordions = document.querySelectorAll('.accordion');
+
+  for (let accordion of accordions) {
+    if (window.innerWidth < 768) {
+      accordion.querySelector('.accordion__body').classList.add('accordion__body_closed');
+      accordion.querySelector('.accordion__button').classList.remove('accordion__button_hidden');
+    }
+  }
+
+  for (let button of accordionButtons) {
+    button.addEventListener('click', function (event) {
+      const accordion = event.target.closest('.accordion');
+      const accordionBody = accordion.querySelector('.accordion__body');
+      if (button.classList.contains('accordion__button_closed')) {
+        button.classList.toggle('accordion__button_closed');
+        accordionBody.classList.toggle('accordion__body_closed');
+        accordion.classList.toggle('accordion_active');
+      } else {
+        for (let elem of accordions) {
+          elem.querySelector('.accordion__body').classList.add('accordion__body_closed');
+          elem.querySelector('.accordion__button').classList.remove('accordion__button_closed');
+          elem.classList.remove('accordion_active');
+        }
+        accordionBody.classList.toggle('accordion__body_closed');
+        button.classList.toggle('accordion__button_closed');
+        accordion.classList.toggle('accordion_active');
+      }
+    });
+  }
 
   // Utils
   // ---------------------------------
