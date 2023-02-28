@@ -103,15 +103,12 @@
 
 
 .header__button {
-  font-family: "Roboto Condensed", "Arial", sans-serif;
   font-size: 14px;
   line-height: 16px;
-  font-weight: 700;
   text-transform: uppercase;
   color: $color-white;
-  background-color: #041827;
+  background-color: $color-default-black;
   border: 1px solid $color-default-white;
-  border-radius: 3px;
   cursor: pointer;
   padding: 10px 15px;
   width: 169px;
