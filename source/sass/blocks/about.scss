@@ -1,0 +1,108 @@
+.about {
+  padding-top: 50px;
+  padding-bottom: 100px;
+  display: flex;
+
+  img {
+    margin-right: 100px;
+    height: fit-content;
+  }
+
+  @include vp-1023 {
+    padding-top: 35px;
+    padding-bottom: 70px;
+
+    img {
+      margin-right: 25px;
+      height: 320px;
+      position: relative;
+      left: -3px;
+      top: 3px;
+    }
+  }
+
+  @include vp-767 {
+    padding-top: 22px;
+    padding-bottom: 70px;
+
+    img {
+      display: none;
+    }
+  }
+}
+
+
+.about__description {
+  height: 170px;
+  overflow: hidden;
+  margin-bottom: 12px;
+
+  &_opened {
+    height: auto;
+  }
+
+  @include vp-1023 {
+    height: 260px;
+    margin-bottom: 8px;
+
+    &_opened {
+      height: auto;
+    }
+  }
+
+  @include vp-767 {
+    height: 205px;
+    margin-bottom: 8px;
+
+    &_opened {
+      height: auto;
+    }
+  }
+}
+
+.about__title {
+  font-family: $ff-robotocondensed;
+  font-size: 36px;
+  line-height: 51px;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 12px;
+
+  @include vp-1023 {
+    margin-bottom: 12px;
+  }
+
+  @include vp-767 {
+    font-size: 28px;
+    line-height: 39px;
+    margin-bottom: 11px;
+  }
+}
+
+.about__text {
+  line-height: 22px;
+  margin-top: 0;
+  margin-bottom: 20px;
+
+  @include vp-767 {
+    font-size: 14px;
+    line-height: 19px;
+  }
+}
+
+.about__button {
+  color: $color-default-blue;
+  font-size: 14px;
+  line-height: 16px;
+  width: 180px;
+  border: 1px solid $color-default-blue;
+  background-color: transparent;
+  padding-top: 13px;
+  padding-bottom: 13px;
+
+  @include vp-767 {
+    width: 160px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+  }
+}
