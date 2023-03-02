@@ -1,0 +1,53 @@
+.feedback {
+  position: relative;
+  padding-top: 8.5%;
+  padding-bottom: 13%;
+  background-color: $color-default-blue;
+  background-image: url("../img/svg/triangle.svg");
+  background-repeat: no-repeat;
+  background-size: 50.5% auto;
+
+  @include vp-1023 {
+    background: none;
+    background-color: $color-default-blue;
+    padding-top: 47px;
+    padding-bottom: 124px;
+  }
+
+  @include vp-767 {
+    padding-bottom: 90px;
+  }
+}
+
+.feedback__inner {
+  display: grid;
+  grid-template-columns: 1fr 600px;
+  column-gap: 20px;
+
+  img {
+    align-self: center;
+    height: fit-content;
+    position: relative;
+    bottom: -15px;
+    left: 5px;
+  }
+
+  @include vp-1023 {
+    display: flex;
+
+    img {
+      display: none;
+    }
+  }
+}
+
+.feedback__form {
+  width: 600px;
+  padding-left: 14px;
+
+  @include vp-1023 {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
