@@ -1,0 +1,141 @@
+.catalog {
+  background-color: $color-background-dark;
+  color: $color-white;
+  padding-top: 67px;
+  padding-bottom: 140px;
+
+  @include vp-1023 {
+    padding-top: 55px;
+    padding-bottom: 76px;
+  }
+
+  @include vp-767 {
+    padding-top: 45px;
+    padding-bottom: 84px;
+  }
+}
+
+.catalog__title {
+  font-family: $ff-robotocondensed;
+  font-size: 36px;
+  line-height: 51px;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 52px;
+
+  &-mobile {
+    display: none;
+  }
+
+  @include vp-1023 {
+    margin-bottom: 39px;
+  }
+
+  @include vp-767 {
+    display: none;
+
+    &-mobile {
+      display: block;
+      font-size: 28px;
+      line-height: 40px;
+      margin-bottom: 28px;
+    }
+  }
+}
+
+.catalog__list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  column-gap: 84px;
+  row-gap: 40px;
+
+  @include vp-1023 {
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+  }
+
+  @include vp-767 {
+    row-gap: 29px;
+  }
+}
+
+.catalog__link {
+  display: block;
+}
+
+.catalog__product {
+  width: 100%;
+  display: flex;
+  position: relative;
+  padding-top: 186%;
+  background-color: $color-background-product;
+
+  img {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  h4 {
+    position: absolute;
+    top: 48px;
+    left: 40px;
+
+    font-family: $ff-robotocondensed;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
+    color: $color-white;
+    z-index: 2;
+    margin: 0;
+    max-width: 155px;
+
+    @include vp-1023 {
+      top: 38px;
+      left: 44px;
+      max-width: 150px;
+    }
+  }
+
+  div {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background-color: $color-default-blue;
+    border: none;
+    border-radius: 3px 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @include vp-1023 {
+    padding-top: 37%;
+  }
+
+  @include vp-767 {
+    height: 250px;
+
+    h4 {
+      font-size: 18px;
+      line-height: 30px;
+      top: 28px;
+      left: 30px;
+      max-width: 135px;
+    }
+
+    div {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
