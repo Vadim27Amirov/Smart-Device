@@ -1,7 +1,7 @@
 .form {
   color: $color-default-white;
 
-  .form__title {
+  h4 {
     font-family: $ff-robotocondensed;
     font-size: 36px;
     line-height: 50px;
@@ -11,7 +11,7 @@
     margin-bottom: 13px;
   }
 
-  .form__desctiption {
+  p {
     font-family: $ff-ptmono;
     font-size: 16px;
     line-height: 22px;
@@ -20,7 +20,7 @@
     margin-bottom: 33px;
   }
 
-  .form__list {
+  ul {
     margin: 0;
     padding: 0;
     padding-left: 5px;
@@ -32,7 +32,7 @@
     row-gap: 20px;
   }
 
-  .form__item {
+  li {
     display: flex;
 
     &:last-child {
@@ -166,24 +166,24 @@
     display: flex;
     flex-direction: column;
 
-    .form__title {
+    h4 {
       font-size: 30px;
       line-height: 42px;
       margin-bottom: 3px;
     }
 
-    .form__desctiption {
+    p {
       margin-bottom: 38px;
       max-width: 380px;
     }
 
-    .form__list {
+    ul {
       display: block;
       margin-bottom: 26px;
       padding-left: 0;
     }
 
-    .form__item {
+    li {
       &:not(:last-child) {
         margin-bottom: 19px;
       }
@@ -212,11 +212,11 @@
   }
 
   @include vp-1023 {
-    .form__title {
+    h4 {
       margin-bottom: 6px;
     }
 
-    .form__desctiption {
+    p {
       margin-bottom: 25px;
     }
 
@@ -224,7 +224,7 @@
       padding: 29px 12px 8px;
     }
 
-    .form__list {
+    ul {
       padding-left: 0;
       margin-bottom: 34px;
     }
@@ -245,20 +245,20 @@
   }
 
   @include vp-767 {
-    .form__title {
+    h4 {
       font-size: 30px;
       line-height: 42px;
       margin-bottom: 8px;
     }
 
-    .form__desctiption {
+    p {
       font-size: 14px;
       line-height: 19px;
       margin-bottom: 32px;
     }
 
 
-    .form__list {
+    ul {
       grid-template-columns: 1fr;
       margin-bottom: 30px;
     }
