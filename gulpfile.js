@@ -41,6 +41,6 @@ const refresh = (done) => {
 
 const build = gulp.series(clean, copy, sprite, gulp.parallel(styles, js, optimizePng, optimizeJpg, optimizeSvg));
 const dev = gulp.series(clean, copy, sprite, gulp.parallel(styles, js, optimizePng, optimizeJpg, optimizeSvg), syncServer);
-const start = gulp.series(clean, copy, sprite, gulp.parallel(styles, js), syncServer);
+const start = gulp.series(clean, createWebp, copy, sprite, gulp.parallel(styles, js), syncServer);
 
 export { createWebp as webp, build, start, dev};
