@@ -6,7 +6,6 @@ import {Form} from './modules/form-validate/form';
 
 window.addEventListener('DOMContentLoaded', () => {
   const callButton = document.querySelector('.header__button');
-  const body = document.querySelector('.body');
   const descriptionButtonOpen = document.querySelector('.about__button');
   const accordionButtons = document.querySelectorAll('.accordion__button');
   const accordions = document.querySelectorAll('.accordion');
@@ -14,7 +13,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   for (let accordion of accordions) {
     if (window.innerWidth < 768) {
-      accordion.querySelector('.accordion__body').classList.add('accordion__body_closed');
+      accordion.querySelector('.accordion__body').classList.add('accordion__body-closed');
       accordion.querySelector('.accordion__button').classList.remove('accordion__button-hidden');
     }
   }
@@ -73,7 +72,6 @@ window.addEventListener('DOMContentLoaded', () => {
   // закрытие модального окна
   function closeModal() {
     modal.classList.remove('modal_opened');
-    body.classList.remove('scroll-lock');
     document.removeEventListener('click', onOverlyaClick);
     document.removeEventListener('keydown', onEscKeydown);
     modal.querySelector('.form').reset();
@@ -98,14 +96,14 @@ window.addEventListener('DOMContentLoaded', () => {
   function descriptionHeightToggle(event) {
     const descriptionButton = event.target;
     const description = descriptionButton.closest('.about__inner').querySelector('.about__description');
-    if (descriptionButton.classList.contains('about__button_closed')) {
-      descriptionButton.classList.remove('about__button_closed');
-      description.classList.toggle('about__description_opened');
+    if (descriptionButton.classList.contains('about__button-closed')) {
+      descriptionButton.classList.remove('about__button-closed');
+      description.classList.toggle('about__description-opened');
       descriptionButton.textContent = 'Подробнее';
       return;
     }
-    descriptionButton.classList.add('about__button_closed');
-    description.classList.toggle('about__description_opened');
+    descriptionButton.classList.add('about__button-closed');
+    description.classList.toggle('about__description-opened');
     descriptionButton.textContent = 'Свернуть';
   }
 
@@ -156,18 +154,18 @@ window.addEventListener('DOMContentLoaded', () => {
     button.addEventListener('click', function (event) {
       const accordion = event.target.closest('.accordion');
       const accordionBody = accordion.querySelector('.accordion__body');
-      if (button.classList.contains('accordion__button_closed')) {
-        button.classList.toggle('accordion__button_closed');
-        accordionBody.classList.toggle('accordion__body_closed');
+      if (button.classList.contains('accordion__button-closed')) {
+        button.classList.toggle('accordion__button-closed');
+        accordionBody.classList.toggle('accordion__body-closed');
         accordion.classList.toggle('accordion_active');
       } else {
         for (let elem of accordions) {
-          elem.querySelector('.accordion__body').classList.add('accordion__body_closed');
-          elem.querySelector('.accordion__button').classList.remove('accordion__button_closed');
+          elem.querySelector('.accordion__body').classList.add('accordion__body-closed');
+          elem.querySelector('.accordion__button').classList.remove('accordion__button-closed');
           elem.classList.remove('accordion_active');
         }
-        accordionBody.classList.toggle('accordion__body_closed');
-        button.classList.toggle('accordion__button_closed');
+        accordionBody.classList.toggle('accordion__body-closed');
+        button.classList.toggle('accordion__button-closed');
         accordion.classList.toggle('accordion_active');
       }
     });
