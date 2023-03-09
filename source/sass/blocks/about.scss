@@ -3,31 +3,38 @@
   padding-bottom: 100px;
   display: flex;
 
-  img {
-    margin-right: 100px;
-    height: fit-content;
-  }
-
   @include vp-1023 {
     padding-top: 35px;
     padding-bottom: 70px;
-
-    img {
-      margin-right: 25px;
-      height: 320px;
-      position: relative;
-      left: -3px;
-      top: 3px;
-    }
   }
 
   @include vp-767 {
     padding-top: 22px;
     padding-bottom: 70px;
+  }
+}
 
-    img {
-      display: none;
-    }
+.about__year {
+  flex-shrink: 0;
+
+  @include vp-1023 {
+    margin-left: -5px;
+  }
+
+  @include vp-767 {
+    display: none;
+  }
+}
+
+.about__inner {
+  margin-left: 100px;
+
+  @include vp-1023 {
+    margin-left: 29px;
+  }
+
+  @include vp-767 {
+    margin: 0;
   }
 }
 
@@ -37,7 +44,7 @@
   overflow: hidden;
   margin-bottom: 12px;
 
-  &_opened {
+  &-opened {
     height: auto;
   }
 
@@ -45,7 +52,7 @@
     height: 260px;
     margin-bottom: 8px;
 
-    &_opened {
+    &-opened {
       height: auto;
     }
   }
@@ -54,7 +61,7 @@
     height: 205px;
     margin-bottom: 8px;
 
-    &_opened {
+    &-opened {
       height: auto;
     }
   }

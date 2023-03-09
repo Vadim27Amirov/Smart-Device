@@ -48,6 +48,7 @@
     border: none;
     border-radius: 3px;
     font: inherit;
+    appearance: none;
 
     &::placeholder {
       color: $color-white;
