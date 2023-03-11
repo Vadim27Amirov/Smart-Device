@@ -17,7 +17,7 @@
   <div class="wrapper">
     <header class="header">
       <nav class="header__navigation container">
-        <a class="header__logo" tabindex="0">
+        <a class="header__logo">
           <picture>
             <source media="(max-width: 767px)" srcset="img/svg/logo-mobile.svg">
             <img src="img/svg/logo.svg" width="215" height="55" alt="логотип компании SmartDevice.">
@@ -39,7 +39,7 @@
             <span class="header__link-text">+7 (495) 000 52 52</span>
           </a>
         </div>
-        <a class="header__button btn" href="#">
+        <a class="header__button btn" data-open-modal="feedback" href="#">
           Заказать звонок
         </a>
       </nav>
@@ -140,88 +140,21 @@
       </section>
       <section class="catalog">
         <div class="catalog__inner container">
-          <h2 class="catalog__title">Smart Device предлагает следующие товары и услуги</h2>
-          <h2 class="catalog__title catalog__title-mobile">Товары и услуги Smart Device</h2>
+          <h2 data-products="title">Smart Device предлагает следующие товары и услуги</h2>
           <ul class="catalog__list">
             <li class="catalog__item">
-              <a href="#" class="catalog__link">
-                <div class="catalog__product">
-                  <picture>
-                    <source type="image/webp" media="(max-width: 767px)"
-                      srcset="img/background-card-1-mobile.webp 1x, img/background-card-1-mobile@2x.webp 2x">
-                    <source type="image/webp" media="(max-width: 1023px)"
-                      srcset="img/background-card-1-tablet.webp 1x, img/background-card-1-tablet@2x.webp 2x">
-                    <source type="image/webp"
-                      srcset="img/background-card-1-desktop.webp 1x, img/background-card-1-desktop@2x.webp 2x">
-                    <source media="(max-width: 767px)"
-                      srcset="img/background-card-1-mobile.jpg 1x, img/background-card-1-mobile@2x.jpg 2x">
-                    <source media="(max-width: 1023px)"
-                      srcset="img/background-card-1-tablet.jpg 1x, img/background-card-1-tablet@2x.jpg 2x">
-                    <img width="350" height="650" src="img/background-card-1-desktop.jpg"
-                      srcset="img/background-card-1-desktop@2x.jpg 2x" alt="Изображение товара." loading="lazy">
-                  </picture>
-                  <h4>Производство печатных плат</h4>
-                  <div>
-                    <svg width="5" height="10" fill="none">
-                      <use href="img/sprite.svg#icon-arrow"></use>
-                    </svg>
-                  </div>
-                  <span class="visually-hidden">Перейти на страницу товара</span>
-                </div>
+              <a class="catalog__link catalog__link--production" href="#">
+                <h3>Производство <br> печатных плат</h3>
               </a>
             </li>
             <li class="catalog__item">
-              <a href="#" class="catalog__link">
-                <div class="catalog__product">
-                  <h4>Монтаж печатных плат</h4>
-                  <picture>
-                    <source type="image/webp" media="(max-width: 767px)"
-                      srcset="img/background-card-2-mobile.webp 1x, img/background-card-2-mobile@2x.webp 2x">
-                    <source type="image/webp" media="(max-width: 1023px)"
-                      srcset="img/background-card-2-tablet.webp 1x, img/background-card-2-tablet@2x.webp 2x">
-                    <source type="image/webp"
-                      srcset="img/background-card-2-desktop.webp 1x, img/background-card-2-desktop@2x.webp 2x">
-                    <source media="(max-width: 767px)"
-                      srcset="img/background-card-2-mobile.jpg 1x, img/background-card-2-mobile@2x.jpg 2x">
-                    <source media="(max-width: 1023px)"
-                      srcset="img/background-card-2-tablet.jpg 1x, img/background-card-2-tablet@2x.jpg 2x">
-                    <img width="350" height="650" src="img/background-card-2-desktop.jpg"
-                      srcset="img/background-card-2-desktop@2x.jpg 2x" alt="Изображение товара." loading="lazy">
-                  </picture>
-                  <div>
-                    <svg width="5" height="10" fill="none">
-                      <use href="img/sprite.svg#icon-arrow"></use>
-                    </svg>
-                  </div>
-                  <span class="visually-hidden">Перейти на страницу товара</span>
-                </div>
+              <a class="catalog__link catalog__link--mounting" href="#" data-products="link">
+                <h3>Монтаж печатных плат</h3>
               </a>
             </li>
             <li class="catalog__item">
-              <a href="#" class="catalog__link">
-                <div class="catalog__product">
-                  <h4>Комплектующие для светотехники</h4>
-                  <picture>
-                    <source type="image/webp" media="(max-width: 767px)"
-                      srcset="img/background-card-3-mobile.webp 1x, img/background-card-3-mobile@2x.webp 2x">
-                    <source type="image/webp" media="(max-width: 1023px)"
-                      srcset="img/background-card-3-tablet.webp 1x, img/background-card-3-tablet@2x.webp 2x">
-                    <source type="image/webp"
-                      srcset="img/background-card-3-desktop.webp 1x, img/background-card-3-desktop@2x.webp 2x">
-                    <source media="(max-width: 767px)"
-                      srcset="img/background-card-3-mobile.jpg 1x, img/background-card-3-mobile@2x.jpg 2x">
-                    <source media="(max-width: 1023px)"
-                      srcset="img/background-card-3-tablet.jpg 1x, img/background-card-3-tablet@2x.jpg 2x">
-                    <img width="350" height="650" src="img/background-card-3-desktop.jpg"
-                      srcset="img/background-card-3-desktop@2x.jpg 2x" alt="Изображение товара." loading="lazy">
-                  </picture>
-                  <div>
-                    <svg width="5" height="10" fill="none">
-                      <use href="img/sprite.svg#icon-arrow"></use>
-                    </svg>
-                  </div>
-                  <span class="visually-hidden">Перейти на страницу товара</span>
-                </div>
+              <a class="catalog__link catalog__link--accessories" href="#">
+                <h3>Комплектующие для&nbsp;светотехники</h3>
               </a>
             </li>
           </ul>
@@ -234,152 +167,139 @@
             <img width="510" height="285" src="img/paper-airplane@1x.png" srcset="img/paper-airplane@2x.png 2x"
               alt="Бумажный самолетик." loading="lazy">
           </picture>
-          <form class="feedback__form form" action="https://echo.htmlacademy.ru/courses" method="post">
-            <h4>Остались вопросы? Задайте&nbsp;их&nbsp;нам!</h4>
+          <form class="feedback__form" action="https://echo.htmlacademy.ru/" method="post">
+            <h2>Остались вопросы? Задайте&nbsp;их&nbsp;нам!</h2>
             <p>Мы проконсультируем Вас бесплатно</p>
-            <ul>
-              <li>
-                <label class="visually-hidden" for="name">имя</label>
-                <input type="text" name="name" id="name" placeholder="Имя" required>
-              </li>
-              <li>
-                <label class="visually-hidden" for="phone">номер телефона</label>
-                <input type="tel" name="phone" id="phone" placeholder="Телефон" minlength="18" required>
-              </li>
-              <li>
-                <label class="visually-hidden" for="question">Ваш вопрос</label>
-                <textarea name="question" id="question" placeholder="Ваш вопрос" rows="5"></textarea>
-              </li>
-            </ul>
-            <div>
-              <button type="submit">Задать вопрос</button>
-              <div class="form__control">
-                <input type="checkbox" name="agree" id="agree" checked tabindex="-1" required>
-                <label for="agree">Я согласен на обработку персональных данных</label>
-              </div>
-            </div>
+            <label class="visually-hidden" for="name">Введите ваше имя</label>
+            <input type="text" name="name" id="name" placeholder="Имя" minlength="1" required>
+            <label class="visually-hidden" for="phone">Введите ваш номер телефона</label>
+            <input type="tel" name="phone" id="phone" placeholder="Телефон" required>
+            <label class="visually-hidden" for="question">Задайте ваш вопрос</label>
+            <textarea id="question" placeholder="Ваш вопрос"></textarea>
+            <label>
+              <input class="visually-hidden" type="checkbox" checked required>
+              <span class="feedback__checkbox-mark"></span>
+              <span>Я согласен на обработку персональных данных</span>
+            </label>
+            <button type="submit">Задать вопрос</button>
           </form>
         </div>
       </section>
     </main>
     <footer class="footer">
-      <div class="footer__content container">
-        <div class="footer__inner">
-          <a class="footer__logo" tabindex="0">
-            <img src="img/svg/logo.svg" width="215" height="55" alt="Логотип компании SmartDevice.">
+      <div class="footer__wrapper container">
+        <div class="footer__social social">
+          <a class="footer__logo">
+            <img src="img/svg/logo.svg" width="215" height="55" alt="Логотип компании Smart Device">
           </a>
-          <section class="footer__social social">
-            <h2 class="visually-hidden">Социальные сети</h2>
-            <ul class="social__list">
-              <li class="social__item">
-                <a class="social__link" href="#">
-                  <svg width="30" height="30" fill="none">
-                    <use href="img/sprite.svg#icon-pinterest"></use>
-                  </svg>
-                  <span class="visually-hidden">Pinterest</span>
-                </a>
-              </li>
-              <li class="social__item">
-                <a class="social__link" href="#">
-                  <svg width="30" height="30" fill="none">
-                    <use href="img/sprite.svg#icon-ok"></use>
-                  </svg>
-                  <span class="visually-hidden">Одноклассники</span></a>
-              </li>
-              <li class="social__item">
-                <a class="social__link" href="#">
-                  <svg width="30" height="30" fill="none">
-                    <use href="img/sprite.svg#icon-vk"></use>
-                  </svg>
-                  <span class="visually-hidden">Вконтакте</span></a>
-              </li>
-            </ul>
-          </section>
-        </div>
-        <nav class="footer__section footer__navigation accordion">
-          <div class="footer__title-wrapper">
-            <h4 class="footer__section-title">Разделы сайта</h4>
-            <button class="accordion__button accordion__button-hidden" type="button">
-              <span class="visually-hidden">Открыть вкладку</span>
-            </button>
-          </div>
-          <ul class="accordion__body footer__nav-list">
-            <li class="footer__nav-item">
-              <a class="footer__nav-link" href="#">О Компаниии</a>
+          <ul class="social__list">
+            <li class="social__item">
+              <a class="social__link" href="#">
+                <span class="visually-hidden">Одноклассники</span>
+                <svg width="30" height="30">
+                  <use xlink:href="img/sprite.svg#icon-ok"></use>
+                </svg>
+              </a>
             </li>
-            <li class="footer__nav-item">
-              <a class="footer__nav-link" href="#">Комплектующие</a>
+            <li class="social__item">
+              <a class="social__link" href="#">
+                <span class="visually-hidden">Вконтакте</span>
+                <svg width="30" height="30">
+                  <use xlink:href="img/sprite.svg#icon-vk"></use>
+                </svg>
+              </a>
             </li>
-            <li class="footer__nav-item">
-              <a class="footer__nav-link" href="#">Продукты</a>
-            </li>
-            <li class="footer__nav-item">
-              <a class="footer__nav-link" href="#">Доставка</a>
-            </li>
-            <li class="footer__nav-item">
-              <a class="footer__nav-link" href="#">Производство печатных плат</a>
-            </li>
-            <li class="footer__nav-item">
-              <a class="footer__nav-link" href="#">Контакты</a>
-            </li>
-            <li class="footer__nav-item">
-              <a class="footer__nav-link" href="#">Монтаж печатных плат</a>
+            <li class="social__item">
+              <a class="social__link" href="#">
+                <span class="visually-hidden">Pinterest</span>
+                <svg width="30" height="30">
+                  <use xlink:href="img/sprite.svg#icon-pinterest"></use>
+                </svg>
+              </a>
             </li>
           </ul>
-        </nav>
-        <div class="footer__section footer__contacts accordion">
-          <div class="footer__title-wrapper">
-            <h4 class="footer__section-title">Наш офис</h4>
-            <button class="footer__button accordion__button accordion-hidden" type="button">
-              <span class="visually-hidden">Закрыть вкладку</span>
-            </button>
-          </div>
-          <address class="accordion__body contacts">
-            <p class="contacts__street">г. Мытищи, Олимпийский проспект, д.10</p>
-            <a class="contacts__phone" href="tel:+74955984050">+7 (495) 589-40-50</a>
-            <a class="contacts__phone" href="tel:+79253895829">+7 (925) 389-58-29</a>
-            <a class="contacts__phone" href="tel:+79253647813">+7 (925) 364-78-13</a>
-          </address>
         </div>
+        <nav class="footer__nav accordion no-js" data-accordion>
+          <div class="accordion__item">
+            <button type="button">Разделы сайта</button>
+            <ul class="footer__nav-list">
+              <li class="footer__nav-first__column">
+                <ul>
+                  <li>
+                    <a href="#">О Компании</a>
+                  </li>
+                  <li>
+                    <a href="#">Продукты</a>
+                  </li>
+                  <li>
+                    <a href="#">Производство печатных плат</a>
+                  </li>
+                  <li>
+                    <a href="#">Монтаж печатных плат</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="footer__nav-second__column">
+                <ul>
+                  <li>
+                    <a href="#">Комплектующие</a>
+                  </li>
+                  <li>
+                    <a href="#">Доставка</a>
+                  </li>
+                  <li>
+                    <a href="#">Контакты</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="accordion__item">
+            <button type="button">Наш офис</button>
+            <ul class="footer__nav-contacts">
+              <li class="footer__nav-address">г. Мытищи, Олимпийский проспект, д.10</li>
+              <li>
+                <a href="tel:+74955894050">+7 (495) 589-40-50</a>
+              </li>
+              <li>
+                <a href="tel:+79253895829">+7 (925) 389-58-29</a>
+              </li>
+              <li>
+                <a href="tel:+79253647813">+7 (925) 364-78-13</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
       </div>
     </footer>
   </div>
 
   <!-- Модалки -->
-  <div class="modal">
+  <div class="modal modal--preload" data-modal="feedback">
     <div class="modal__wrapper">
-      <div class="modal__overlay"></div>
+      <div class="modal__overlay" data-close-modal></div>
       <div class="modal__content">
-        <button class="modal__close-button" type="button" aria-label="Закрыть попап" tabindex="2">
-          <svg width="20" height="20" fill="none">
-            <use href="img/sprite.svg#icon-close"></use>
-          </svg>
-        </button>
-        <form class="form form__modal" action="https://echo.htmlacademy.ru/courses" method="post">
-          <h4 id="modal-title">Закажите звонок</h4>
-          <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
-          <ul>
-            <li>
-              <label class="visually-hidden" for="modal-name">Имя</label>
-              <input type="text" name="name" id="modal-name" placeholder="Имя" required>
-            </li>
-            <li>
-              <label class="visually-hidden" for="modal-phone">Номер телефона</label>
-              <input type="tel" name="phone" id="modal-phone" placeholder="Телефон" required>
-            </li>
-            <li>
-              <label class="visually-hidden" for="modal-question">Ваш вопрос</label>
-              <textarea name="question" id="modal-question" placeholder="Ваш вопрос" rows="5"></textarea>
-            </li>
-          </ul>
-          <div>
-            <button class="modal__button" type="submit">Отправить</button>
-            <span>
-              <input type="checkbox" name="agree" id="modal-agree" checked tabindex="-1" required>
-              <label for="modal-agree">Я согласен на обработку персональных данных</label>
-            </span>
-          </div>
+        <form class="modal__form" action="https://echo.htmlacademy.ru/" method="post">
+          <h2>Закажите звонок</h2>
+          <p>Оставьте контакты, мы&nbsp;проконсультируем вас бесплатно в&nbsp;удобное время</p>
+          <label class="visually-hidden" for="modal-name">Введите ваше имя</label>
+          <input type="text" name="name" id="modal-name" placeholder="Имя" minlength="1" required
+            pattern="^[A-Za-zА-Яа-яЁё,.'-\s]{1,}">
+          <label class="visually-hidden" for="modal-phone">Введите ваш номер телефона</label>
+          <input type="tel" name="phone" id="modal-phone" placeholder="Телефон" required
+            title="Используйте формат: +7(777)777-77-77" data-mask="phone"
+            pattern="[+]7[\(]\d{3}[\)]\d{3}[\-]\d{2}[\-]\d{2}">
+          <label class="visually-hidden" for="modal-your-question">Задайте ваш вопрос</label>
+          <textarea id="modal-your-question" placeholder="Ваш вопрос"></textarea>
+          <label>
+            <input class="visually-hidden" type="checkbox" checked required>
+            <span class="modal__checkbox-mark"></span>
+            <span>Я согласен на обработку персональных данных</span>
+          </label>
+          <button type="submit">Отправить</button>
         </form>
+        <button class="modal__close-button btn-reset" type="button" aria-label="Закрыть попап" data-close-modal>
+        </button>
       </div>
     </div>
   </div>
