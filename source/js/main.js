@@ -5,93 +5,9 @@ import {Form} from './modules/form-validate/form';
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
-  const callButton = document.querySelector('.header__button');
   const descriptionButtonOpen = document.querySelector('.about__button');
-  const accordionButtons = document.querySelectorAll('.accordion__button');
-  const accordions = document.querySelectorAll('.accordion');
-  const modal = document.querySelector('.modal');
-
-  for (let accordion of accordions) {
-    if (window.innerWidth < 768) {
-      accordion.querySelector('.accordion__body').classList.add('accordion__body-closed');
-      accordion.querySelector('.accordion__button').classList.remove('accordion__button-hidden');
-    }
-  }
-
-  // управление фокусом в модальном окне
-
-  function trapFocus(e) {
-    const modalClosedButton = modal.querySelector('.modal__close-button');
-    const focusableFormEls = modal.querySelector('.form').querySelectorAll('button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="tel"]:not([disabled]), input[type="checkbox"]:not([disabled]), textaria');
-    const firstFocusableEl = focusableFormEls[0];
-    const lastFocusableEl = focusableFormEls[focusableFormEls.length - 1];
-
-    if (e.key !== 'Tab') {
-      return;
-    }
-
-    if (e.key === 'Tab' && e.shiftKey) {
-      if (document.activeElement === firstFocusableEl) {
-        modalClosedButton.focus();
-        e.preventDefault();
-      } else if (document.activeElement === modalClosedButton) {
-        lastFocusableEl.focus();
-        e.preventDefault();
-      }
-    } else {
-      if (document.activeElement === lastFocusableEl) {
-        modalClosedButton.focus();
-        e.preventDefault();
-      } else if (document.activeElement === modalClosedButton) {
-        firstFocusableEl.focus();
-        e.preventDefault();
-      }
-    }
-  }
-
-  // закрытие модального окна по Esc
-  function onEscKeydown(e) {
-    if (e.key === 'Escape') {
-      e.preventDefault();
-      closeModal();
-    }
-  }
-
-  // открытие модального окна
-  function openModal() {
-    const modalClosedButton = modal.querySelector('.modal__close-button');
-    const nameInput = modal.querySelector('#modal-name');
-    modal.classList.add('modal_opened');
-    nameInput.focus();
-    document.addEventListener('click', onOverlyaClick);
-    document.addEventListener('keydown', onEscKeydown);
-    modalClosedButton.addEventListener('click', closeModal);
-    modal.addEventListener('keydown', trapFocus);
-  }
-
-  // закрытие модального окна
-  function closeModal() {
-    modal.classList.remove('modal_opened');
-    document.removeEventListener('click', onOverlyaClick);
-    document.removeEventListener('keydown', onEscKeydown);
-    modal.querySelector('.form').reset();
-  }
-
-
-  // закрытие модального при клике на оверлей
-  function onOverlyaClick(event) {
-    const target = event.target;
-    if (target.classList.contains('modal__overlay')) {
-      closeModal();
-    }
-  }
-
-  // открытие модального окна
-  callButton.addEventListener('click', function () {
-    if (modal !== null) {
-      openModal();
-    }
-  });
+  const accordion = document.querySelector('[data-accordion]');
+  const accordionTitles = document.querySelectorAll('[data-accordion] button');
 
   function descriptionHeightToggle(event) {
     const descriptionButton = event.target;
@@ -148,29 +64,30 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  const initAccordion = () => {
+    if (accordion) {
+      accordion.classList.remove('no-js');
+    }
+
+    if (accordionTitles.length > 0) {
+      accordionTitles.forEach((accordeonTitle) => {
+        accordeonTitle.addEventListener('click', (evt) => {
+          if (evt.target.classList.contains('is-open')) {
+            evt.target.classList.remove('is-open');
+          } else {
+            for (let title of accordionTitles) {
+              title.classList.remove('is-open');
+            }
+            evt.target.classList.add('is-open');
+          }
+        });
+      });
+    }
+  };
+
+  initAccordion();
+
   maskPhone();
-
-  for (let button of accordionButtons) {
-    button.addEventListener('click', function (event) {
-      const accordion = event.target.closest('.accordion');
-      const accordionBody = accordion.querySelector('.accordion__body');
-      if (button.classList.contains('accordion__button-closed')) {
-        button.classList.toggle('accordion__button-closed');
-        accordionBody.classList.toggle('accordion__body-closed');
-        accordion.classList.toggle('accordion_active');
-      } else {
-        for (let elem of accordions) {
-          elem.querySelector('.accordion__body').classList.add('accordion__body-closed');
-          elem.querySelector('.accordion__button').classList.remove('accordion__button-closed');
-          elem.classList.remove('accordion_active');
-        }
-        accordionBody.classList.toggle('accordion__body-closed');
-        button.classList.toggle('accordion__button-closed');
-        accordion.classList.toggle('accordion_active');
-      }
-    });
-  }
-
 
   // Utils
   // ---------------------------------

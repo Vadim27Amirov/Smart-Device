@@ -1,6 +1,8 @@
 import {ScrollLock} from '../../utils/scroll-lock';
 import {FocusLock} from '../../utils/focus-lock';
 
+const feedbackModalName = document.querySelector('#modal-name');
+
 export class Modals {
   constructor(settings = {}) {
     this._scrollLock = new ScrollLock();
@@ -108,6 +110,7 @@ export class Modals {
   _addListeners(modal) {
     modal.addEventListener('click', this._modalClickHandler);
     document.addEventListener('keydown', this._documentKeydownHandler);
+    feedbackModalName.focus();
   }
 
   _removeListeners(modal) {
