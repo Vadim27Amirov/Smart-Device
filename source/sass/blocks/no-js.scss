@@ -1,0 +1,13 @@
+.no-js ul {
+  @include vp-767 {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.no-js button::before,
+.no-js button::after {
+  @include vp-767 {
+    display: none;
+  }
+}

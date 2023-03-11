@@ -1,36 +1,50 @@
-
-.accordion__button {
-  display: none;
+.accordion__item {
+  margin-top: -4px;
 
   @include vp-767 {
-    display: inline-flex;
-    border: none;
-    background-color: $color-background-dark;
-    background-image: url("../img/svg/open-button.svg");
-    background-repeat: no-repeat;
-    background-position: right;
-    cursor: pointer;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 25px;
+    margin-top: 0;
+    padding: 19px 25px 16px 25px;
+    border-top: 1px solid rgba(248, 253, 255, 0.7);
+    border-bottom: 1px solid rgba(248, 253, 255, 0.7);
+  }
+}
 
-    &-closed {
-      position: relative;
-      top: 0;
-      background-image: url("../img/svg/close-button.svg");
+.accordion__item > ul {
+  @include vp-767 {
+    display: none;
+  }
+}
+
+.accordion button {
+  padding: 0;
+
+  @include vp-767 {
+    position: relative;
+    user-select: none;
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      width: 15px;
+      height: 1px;
+      display: block;
+      background-color: #c4c4c4;
+      top: 5px;
+      right: 2px;
     }
 
-    &-hidden {
-      display: none;
+    &::after {
+      transform: rotate(90deg);
     }
   }
 }
 
-.accordion__body {
+.accordion button.is-open {
   @include vp-767 {
-    &-closed {
+    cursor: pointer;
+
+    &::after {
       display: none;
     }
   }

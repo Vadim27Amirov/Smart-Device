@@ -1,141 +1,212 @@
 .catalog {
-  background-color: $color-background-dark;
-  color: $color-white;
-  padding-top: 67px;
+  background-color: $color-default-black;
+  padding-top: 66px;
   padding-bottom: 140px;
 
   @include vp-1023 {
     padding-top: 55px;
-    padding-bottom: 76px;
+    padding-bottom: 75px;
   }
 
   @include vp-767 {
-    padding-top: 45px;
-    padding-bottom: 84px;
+    padding-top: 48px;
+    padding-bottom: 86px;
   }
 }
 
-.catalog__title {
+.catalog h2 {
   font-family: $ff-robotocondensed;
+  font-weight: 400;
   font-size: 36px;
   line-height: 51px;
-  font-weight: 400;
+  color: $color-white;
   margin-top: 0;
-  margin-bottom: 52px;
-
-  &-mobile {
-    display: none;
-  }
+  margin-bottom: 50px;
 
   @include vp-1023 {
-    margin-bottom: 39px;
+    margin-bottom: 36px;
   }
 
   @include vp-767 {
-    display: none;
-
-    &-mobile {
-      display: block;
-      font-size: 28px;
-      line-height: 40px;
-      margin-bottom: 28px;
-    }
+    font-size: 28px;
+    line-height: 39px;
+    margin-bottom: 28px;
   }
 }
 
 .catalog__list {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  margin: 0;
   padding: 0;
-  column-gap: 84px;
-  row-gap: 40px;
+  margin: 0;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 85px;
+  row-gap: 50px;
 
   @include vp-1023 {
-    grid-template-columns: 1fr;
-    row-gap: 32px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
   }
+}
+
+.catalog h3 {
+  font-family: $ff-robotocondensed;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: $color-white;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  max-width: 230px;
 
   @include vp-767 {
-    row-gap: 29px;
+    font-size: 18px;
+    line-height: 30px;
   }
 }
 
 .catalog__link {
   display: block;
-  align-items: center;
-}
-
-.catalog__product {
-  width: 100%;
-  display: flex;
+  max-width: 350px;
+  height: 650px;
+  background-size: cover;
+  padding: 50px 40px;
   position: relative;
-  padding-top: 186%;
-  background-color: $color-background-product;
-
-  img {
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  h4 {
-    position: absolute;
-    top: 48px;
-    left: 40px;
-
-    font-family: $ff-robotocondensed;
-    font-size: 20px;
-    line-height: 30px;
-    font-weight: 400;
-    color: $color-white;
-    z-index: 2;
-    margin: 0;
-    max-width: 155px;
-
-    @include vp-1023 {
-      top: 38px;
-      left: 44px;
-      max-width: 150px;
-    }
-  }
-
-  div {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 60px;
-    height: 60px;
-    background-color: $color-default-blue;
-    border: none;
-    border-radius: 3px 0 0 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  background-color: $color-default-black;
 
   @include vp-1023 {
-    padding-top: 37%;
+    max-width: 100%;
+    height: 250px;
+    padding: 40px 45px;
   }
 
   @include vp-767 {
-    height: 250px;
+    padding: 26px 30px;
+  }
+}
 
-    h4 {
-      font-size: 18px;
-      line-height: 30px;
-      top: 28px;
-      left: 30px;
-      max-width: 135px;
+.catalog__link--production {
+  background-image: url("../img/card-1-desktop.jpg"), url("../img/card-1-desktop.webp");
+
+  @include vp-1023 {
+    background-image: url("../img/card-1-tablet.jpg"), url("../img/card-1-tablet.webp");
+  }
+
+  @include vp-767 {
+    background-image: url("../img/card-1-mobile.jpg"), url("../img/card-1-mobile.webp");
+  }
+
+  @media (min-resolution: 2dppx) {
+    @include vp-767 {
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/card-1-mobile@2x.jpg"), url("../img/card-1-mobile@2x.webp");
+      }
     }
 
-    div {
-      width: 40px;
-      height: 40px;
+    @include vp-1023 {
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/card-1-tablet@2x.jpg"), url("../img/card-1-tablet@2x.webp");
+      }
+    }
+
+    @media (min-width: 1024px) {
+      background-image: url("../img/card-1-desktop@2x.jpg"), url("../img/card-1-desktop@2x.webp");
     }
   }
+}
+
+.catalog__link--mounting {
+  background-image: url("../img/card-2-desktop.jpg"), url("../img/card-2-desktop.webp");
+
+  @include vp-1023 {
+    background-image: url("../img/card-2-tablet.jpg"), url("../img/card-2-tablet.webp");
+  }
+
+  @include vp-767 {
+    background-image: url("../img/card-2-mobile.jpg"), url("../img/card-2-mobile.webp");
+  }
+
+  @media (min-resolution: 2dppx) {
+    @include vp-767 {
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/card-2-mobile@2x.jpg"), url("../img/card-2-mobile@2x.webp");
+      }
+    }
+
+    @include vp-1023 {
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/card-2-tablet@2x.jpg"), url("../img/card-2-tablet@2x.webp");
+      }
+    }
+
+    @media (min-width: 1024px) {
+      background-image: url("../img/card-2-desktop@2x.jpg"), url("../img/card-2-desktop@2x.webp");
+    }
+  }
+}
+
+.catalog__link--accessories {
+  background-image: url("../img/card-3-desktop.jpg"), url("../img/card-3-desktop.webp");
+
+  @include vp-1023 {
+    background-image: url("../img/card-3-tablet.jpg"), url("../img/card-3-tablet.webp");
+  }
+
+  @include vp-767 {
+    background-image: url("../img/card-3-mobile.jpg"), url("../img/card-3-mobile.webp");
+  }
+
+  @media (min-resolution: 2dppx) {
+    @include vp-767 {
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/card-3-mobile@2x.jpg"), url("../img/card-3-mobile@2x.webp");
+      }
+    }
+
+    @include vp-1023 {
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/card-3-tablet@2x.jpg"), url("../img/card-3-tablet@2x.webp");
+      }
+    }
+
+    @media (min-width: 1024px) {
+      background-image: url("../img/card-3-desktop@2x.jpg"), url("../img/card-3-desktop@2x.webp");
+    }
+  }
+}
+
+.catalog__link::before,
+.catalog__link::after {
+  position: absolute;
+  content: "";
+}
+
+.catalog__link::before {
+  width: 100%;
+  height: 100%;
+  background: rgba(4, 24, 39, 0.5);
+  top: 0;
+  left: 0;
+}
+
+.catalog__link::after {
+  width: 60px;
+  height: 60px;
+  background-color: $color-default-blue;
+  right: 0;
+  bottom: 0;
+  background-image: url("../img/svg/icon-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @include vp-767 {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.catalog__link:hover::before {
+  display: none;
 }
