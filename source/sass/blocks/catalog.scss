@@ -28,8 +28,17 @@
   }
 
   @include vp-767 {
+    display: none;
+  }
+}
+
+.catalog__title-mobile h2 {
+  display: none;
+
+  @include vp-767 {
+    display: block;
     font-size: 28px;
-    line-height: 39px;
+    line-height: 40px;
     margin-bottom: 28px;
   }
 }

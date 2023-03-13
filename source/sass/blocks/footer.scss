@@ -123,8 +123,8 @@
   }
 }
 
-.footer__nav-first__column li:not(:last-of-type),
-.footer__nav-second__column li:not(:last-of-type) {
+.footer__nav-first-column li:not(:last-of-type),
+.footer__nav-second-column li:not(:last-of-type) {
   margin-bottom: 6px;
 
   @include vp-1023 {
@@ -157,4 +157,3 @@
     color: $color-default-blue;
   }
 }
-
