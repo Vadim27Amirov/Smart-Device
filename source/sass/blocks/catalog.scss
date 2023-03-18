@@ -21,7 +21,7 @@
   line-height: 51px;
   color: $color-white;
   margin-top: 0;
-  margin-bottom: 50px;
+  margin-bottom: 55px;
 
   @include vp-1023 {
     margin-bottom: 36px;
@@ -81,7 +81,7 @@
   max-width: 350px;
   height: 650px;
   background-size: cover;
-  padding: 50px 40px;
+  padding: 45px 40px;
   position: relative;
   background-color: $color-default-black;
 

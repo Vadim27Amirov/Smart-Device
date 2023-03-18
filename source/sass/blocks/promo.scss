@@ -1,112 +1,101 @@
 .promo {
   background-image: url("../img/background-main.jpg"), url("../img/background-main.webp");
+  background-size: cover;
   width: 100%;
+  margin-top: -120px;
+  padding-top: 425px;
+  padding-bottom: 280px;
   position: relative;
   color: $color-default-white;
   font-family: $ff-robotocondensed;
-  min-height: 880px;
-  margin-top: -120px;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  &::before {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%);
-  }
 
   @media (min-resolution: 2dppx) {
     background-image: url("../img/background-main@2x.jpg"), url("../img/background-main@2x.webp");
     width: 100%;
   }
 
-
   @include vp-1023 {
+    margin-top: -100px;
+    padding-top: 180px;
+    padding-bottom: 205px;
     background-position: 20%;
     background-repeat: no-repeat;
-    min-height: 640px;
-    margin-top: -100px;
   }
 
   @include vp-767 {
+    margin-top: -70px;
+    padding-top: 150px;
+    padding-bottom: 194px;
     background-position: 25%;
     background-repeat: no-repeat;
-    margin-top: -70px;
-    min-height: 560px;
   }
 }
 
 .promo__inner {
   position: relative;
   z-index: 1;
-  padding-top: 305px;
-  padding-left: 125px;
+  padding-left: 174px;
 
   @include vp-1023 {
-    padding-top: 180px;
     padding-left: 50px;
+  }
+}
+
+.promo h1 {
+  font-family: $ff-robotocondensed;
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 94px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: $color-default-white;
+  margin-top: 0;
+  margin-bottom: 32px;
+
+  @include vp-1023 {
+    font-size: 64px;
+    line-height: 75px;
+    margin-bottom: 0;
   }
 
   @include vp-767 {
-    padding-top: 150px;
-    padding-left: 25px;
+    font-size: 36px;
+    line-height: 42px;
+    margin-bottom: 8px;
+  }
+}
+
+.promo p {
+  font-family: $ff-ptmono;
+  font-size: 22px;
+  line-height: 155%;
+  color: $color-default-white;
+  max-width: 685px;
+  margin-top: 0;
+  margin-bottom: 48px;
+
+  @include vp-1023 {
+    margin-bottom: 58px;
   }
 
-  h1 {
-    font-size: 80px;
-    font-weight: 700;
-    line-height: 94px;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    margin-top: 0;
-    margin-bottom: 32px;
-
-    @include vp-1023 {
-      font-size: 64px;
-      line-height: 75px;
-      margin-bottom: 0;
-    }
-
-    @include vp-767 {
-      font-size: 36px;
-      line-height: 42px;
-      margin-bottom: 8px;
-    }
-  }
-
-  p {
-    font-family: $ff-ptmono;
-    font-size: 22px;
-    margin-top: 0;
-    margin-bottom: 33px;
-    line-height: 36px;
-    max-width: 670px;
-
-    @include vp-1023 {
-      line-height: 34px;
-      margin-bottom: 48px;
-    }
-
-    @include vp-767 {
-      font-size: 14px;
-      line-height: 22px;
-      margin-bottom: 34px;
-    }
+  @include vp-767 {
+    font-size: 14px;
+    line-height: 155%;
+    margin-bottom: 46px;
   }
 }
 
 .promo__button {
   font-size: 18px;
   line-height: 21px;
-  padding: 16px 25px 17px;
+  padding: 16px 26px;
+  max-width: 410px;
+  text-align: center;
+  letter-spacing: 0.05em;
   background-color: $color-default-blue;
 
   @include vp-1023 {
-    margin-left: 48px;
+    margin-left: 46px;
   }
 
   @include vp-767 {

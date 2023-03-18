@@ -1,7 +1,8 @@
 .container {
-  width: 85%;
-  max-width: 1220px;
+  max-width: 1320px;
   margin: 0 auto;
+  padding-left: 50px;
+  padding-right: 50px;
 
   @include vp-1023 {
     width: 100%;

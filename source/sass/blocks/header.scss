@@ -1,125 +1,137 @@
 .header {
   background: linear-gradient(180deg, #041827 84.9%, rgba(4, 24, 39, 0) 100%);
-  padding-top: 30px;
-  padding-bottom: 35px;
-  position: sticky;
+  position: relative;
+  z-index: 10;
+}
+
+.header--fixed {
+  position: fixed;
   top: 0;
-  z-index: 5;
+  width: 100%;
 
   @include vp-1023 {
-    position: static;
+    position: relative;
+  }
+}
+
+.header__navigation {
+  padding-top: 28px;
+  padding-bottom: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 5%;
+
+  @include vp-1023 {
     padding-top: 20px;
     padding-bottom: 25px;
+    padding-right: 9%;
+    align-items: flex-start;
   }
 
   @include vp-767 {
     padding-top: 10px;
     padding-bottom: 20px;
+    padding-right: 11%;
   }
 }
 
+
 .header__logo {
-  display: flex;
+  display: block;
+  margin-right: 12px;
   align-self: start;
 
-  svg {
-    display: block;
+  @include vp-1023 {
+    margin-right: auto;
   }
 
-  &:focus {
-    outline: 2px solid $color-focus-outline;
+  @include vp-767 {
+    margin-top: 5px;
   }
+}
+
+.header__logo img {
+  width: 215px;
+  height: 55px;
 
   @include vp-767 {
     width: 35px;
     height: 35px;
-    align-self: center;
   }
 }
 
-.header__navigation {
-  display: flex;
-  padding-right: 3%;
-  justify-content: space-between;
-  align-items: center;
-
-  @include vp-1023 {
-    padding-right: 70px;
-  }
-
-  @include vp-767 {
-    padding-right: 35px;
-  }
-}
-
-.header__contacts {
+.header__contacts-list {
+  padding: 0;
+  list-style-type: none;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-width: 43%;
-  max-width: 35%;
-  margin-bottom: 5px;
-
-  svg {
-    margin-right: 15px;
-  }
+  column-gap: 45px;
+  row-gap: 10px;
+  margin-left: -20px;
 
   @include vp-1023 {
-    display: flex;
-    justify-content: end;
     margin: 0;
-    max-width: 50%;
-    padding: 0;
-    align-self: start;
-
-    svg {
-      margin-right: 0;
-    }
+    column-gap: 20px;
   }
 }
 
-.header__link {
-  display: flex;
-  align-items: center;
-  margin-left: 20px;
+.header__contacts-link {
   color: $color-default-white;
+  display: flex;
+  width: fit-content;
 
   @include vp-1023 {
-    width: 40px;
-    height: 40px;
-    justify-content: center;
+    padding: 10px;
   }
 
-
-  @include vp-767 {
-    align-items: center;
+  &:hover {
+    color: $color-default-blue;
   }
 }
 
 .header__link-text {
+  margin-left: 15px;
+
   @include vp-1023 {
     display: none;
   }
 }
 
-
-.header__button {
-  font-size: 14px;
-  line-height: 16px;
-  text-transform: uppercase;
-  color: $color-white;
-  background-color: $color-default-black;
-  border: 1px solid $color-default-white;
-  cursor: pointer;
-  padding: 10px 15px;
-  width: 169px;
-  text-align: center;
+.header__contacts-link span {
+  margin-left: 15px;
 
   @include vp-1023 {
     display: none;
   }
+}
 
-  &:hover,
-  &:focus {
-    opacity: 0.8;
+.header__button {
+  font-family: $ff-robotocondensed;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $color-default-white;
+  background-color: transparent;
+  padding: 10px 15px;
+  border: 1px solid $color-default-white;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 7px;
+  margin-right: 15px;
+  user-select: none;
+  height: fit-content;
+  align-self: start;
+
+  &:hover {
+    color: $color-default-blue;
+    border-color: $color-default-blue;
+  }
+
+  @include vp-1023 {
+    display: none;
   }
 }
