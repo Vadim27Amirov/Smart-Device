@@ -1,6 +1,7 @@
 import {iosVhFix} from './utils/ios-vh-fix';
 import {initModals} from './modules/modals/init-modals';
 import {Form} from './modules/form-validate/form';
+import {breakpointCheckerDesktop} from './modules/modals/adaptive';
 
 // ---------------------------------
 
@@ -92,6 +93,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // Utils
   // ---------------------------------
 
+  breakpointCheckerDesktop();
   iosVhFix();
 
   // Modules
@@ -106,6 +108,7 @@ window.addEventListener('DOMContentLoaded', () => {
     form.init();
   });
 });
+
 
 // ---------------------------------
 
